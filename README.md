@@ -1,4 +1,4 @@
-# Night-Shift-on-Unsupported-Macs
+# Night Shift on Unsupported Macs
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / OS X Hackers
