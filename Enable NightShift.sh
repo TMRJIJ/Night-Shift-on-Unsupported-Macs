@@ -39,9 +39,9 @@ if [[ $prompt == 'y' ]]; then
 		echo ""
 		echo "Backing Up older CoreBrightness Framework. It's in your Home Folder"
 		mkdir ~/CoreBrightness\ Backup
-		sudo cp "/System/Library/PrivateFrameworks/CoreBrightness.framework" ~/CoreBrightness\ Backup/
+		sudo cp -r "/System/Library/PrivateFrameworks/CoreBrightness.framework" ~/CoreBrightness\ Backup/
 		echo "Replacing Original with Modified Framework"
-		sudo cp "./Resources/CoreBrightness.framework"  "/System/Library/PrivateFrameworks/"
+		sudo cp -r "./Resources/CoreBrightness.framework"  "/System/Library/PrivateFrameworks/"
 		echo "New CoreBrightness will be Codesigned"
 		sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions/Current/CoreBrightness
 		echo ""
