@@ -25,8 +25,22 @@ MacPro6,x
 
 MacBook8,x
 
-
-As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net or attempt it manually via Pike's original blog post.
+__Warning: This patch has not been tested on macOS 10.12.5 Developer Previews yet.__
 
 # Patching Instructions
+1. Open the Terminal app in your Applications Folder
+2. Drag the 'Enable NightShift.sh' into the Terminal Window
+3. Following the instructions
+4. After Patching. Restart your Mac.
 
+# Uninstall
+I haven't made an uninstallation script yet but you can easily revert back to the original CoreBrightness framework.
+1. Copy the Backup ~/CoreBrightness/CoreBrightness.framework' into '/System/Library/PrivateFrameworks/'
+Terminal Command:
+> sudo cp -r "~/CoreBrightness/CoreBrightness.framework" "/System/Library/PrivateFrameworks/" 
+    
+
+
+
+
+As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net or attempt it manually via Pike's original blog post.
