@@ -1,12 +1,7 @@
 #!/bin/bash
-rsrcPath=$1
-volPath=$2
-specPath=$3
-
-
 
 echo "Night Shift Enable Script for Unsupported Macs"
-echo"version 1.0"
+echo "version 1.0"
 echo "Script made by Isiah Johnson (TMRJIJ) / OS X Hackers"
 echo ""
 echo "All credits for this work goes to Piker Alpha. Thanks!"
@@ -27,21 +22,35 @@ This script will replace the CoreBrightness.framework with one already patched w
 As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net or attempt it manually via Pike's original blog post.
 "
 
-echo "Checking  System Integrity Protection status"
-echo "If SIP status  below shows as enabled, please boot into Recovery HD, open a new Terminal Window, and type and enter 'csrutil disable' and restart your Mac. This won't work otherwise"
+echo "Checking System Version..."
 echo ""
-csrutil status
+
+if [[ $(sw_vers | grep 10.12.4 | wc -l) -eq 0 ]]; then
+    echo "Incompatible version of macOS, exiting..."
+    echo ""
+    exit
+fi
+echo "Checking System Integrity Protection status..."
+echo ""
+
+if [[ !($(csrutil status | grep enabled | wc -l) -eq 0) ]]; then
+    echo "SIP is enabled on this system. Please boot into Recovery HD or a Sierra Installer USB drive, open a new Terminal Window, and enter 'csrutil disable'. When completed, reboot back into your standard Sierra install, and run this script again."
+    echo ""
+    exit
+fi
 
 
-read -p "Ready to begin Patching? Enter [y/n]: " prompt
+read -p "Ready to begin Patching? [y/n]: " prompt
 if [[ $prompt == 'y' ]]; then
 		echo "Let get started then"
 		echo ""
 		echo "Backing Up older CoreBrightness Framework. It's in your Home Folder"
 		mkdir ~/CoreBrightness\ Backup
 		sudo cp -r "/System/Library/PrivateFrameworks/CoreBrightness.framework" ~/CoreBrightness\ Backup/
-		echo "Replacing Original with Modified Framework"
-		sudo cp -r "./Resources/CoreBrightness.framework"  "/System/Library/PrivateFrameworks/"
+		echo "Downloading and Replacing Original with Modified Framework"
+		curl -o ~/CoreBrightness.framework.zip "http://dosdude1.com/sierra/NightShiftPatch/CoreBrightness.framework.zip"
+        sudo unzip -o ~/CoreBrightness.framework.zip -d "/System/Library/PrivateFrameworks/"
+        rm ~/CoreBrightness.framework.zip
 		echo "New CoreBrightness will be Codesigned"
 		sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions/Current/CoreBrightness
 		echo ""
