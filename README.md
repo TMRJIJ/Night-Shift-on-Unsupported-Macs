@@ -37,7 +37,10 @@ __Warning: This patch has not been tested on macOS 10.12.5 Developer Previews ye
 I haven't made an uninstallation script yet but you can easily revert back to the original CoreBrightness framework.
 1. Copy the Backup ~/CoreBrightness/CoreBrightness.framework' into '/System/Library/PrivateFrameworks/'
 Terminal Command:
-> sudo cp -r "~/CoreBrightness/CoreBrightness.framework" "/System/Library/PrivateFrameworks/" 
+> sudo cp -r "~/CoreBrightness/CoreBrightness.framework" "/System/Library/PrivateFrameworks/"
+sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions/Current/CoreBrightness
+
+2. Restart your Mac
     
 
 
