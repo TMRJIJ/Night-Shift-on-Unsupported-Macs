@@ -33,7 +33,7 @@ __Warning: This patch has not been tested on macOS 10.12.5 Developer Previews ye
 
 # Patching Instructions
 
-Note: System Integrity Protection must be disabled beforehand in order to patch the framework. You can reenable it after you're done. Software Updates may revert this patch so always check this repository for updates.
+Note: System Integrity Protection must be disabled beforehand in order to patch the framework. You can re-enable it after you're done. Software Updates may revert this patch so always check this repository for updates. [HOW TO DISABLE SIP?](http://apple.stackexchange.com/questions/208478/how-do-i-disable-system-integrity-protection-sip-aka-rootless-on-os-x-10-11 )
 
 1. Open the Terminal app in your Applications Folder
 2. Drag the 'Enable NightShift.sh' into the Terminal Window
@@ -54,5 +54,7 @@ sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions
 
 
 
+# Support
 
 As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net or attempt it manually via Pike's original blog post.
+
