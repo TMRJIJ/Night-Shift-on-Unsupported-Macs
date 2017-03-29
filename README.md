@@ -3,6 +3,8 @@
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / OS X Hackers
 
+![alt tag](http://dl.osxhackers.net/.images/NightShift.png)
+
 This script will replace the CoreBrightness.framework with one already patched with the matching hex value in CoreBrightness.framework for most older/unsupported hardware.
 
 All credits for this work goes to Piker Alpha. Thanks!
@@ -25,4 +27,6 @@ MacBook8,x
 
 
 As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net or attempt it manually via Pike's original blog post.
+
+# Patching Instructions
 
