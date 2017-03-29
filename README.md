@@ -26,7 +26,7 @@ Night Shift was introduced in macOS Sierra 10.12.4 (Build 16E144f and Public Bet
 - MacPro6,x
 - MacBook8,x
 
-Of course, this patch is intended to bypass this check competely.
+Of course, this patch is intended to bypass this check completely.
 
 
 __Warning: This patch has not been tested on macOS 10.12.5 Developer Previews yet.__
