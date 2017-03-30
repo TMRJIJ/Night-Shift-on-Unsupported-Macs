@@ -1,8 +1,8 @@
 #!/bin/bash
 
 echo "Night Shift Enable Script for Unsupported Macs"
-echo "version 1.0"
-echo "Script made by Isiah Johnson (TMRJIJ) / OS X Hackers"
+echo "version 1.2"
+echo "Script made by Isiah Johnson (TMRJIJ) / OS X Hackers and Dosdude1"
 echo ""
 echo "All credits for this work goes to Piker Alpha. Thanks!"
 echo "As told, this script is intended as non-commerical, with no Donation requests, Open Source, and must give thanks to PIke!"
@@ -25,11 +25,18 @@ As such, if something goes wrong (like the Display tab in System Preference cras
 echo "Checking System Version..."
 echo ""
 
-if [[ $(sw_vers | grep 10.12.4 | wc -l) -eq 0 ]]; then
-    echo "Incompatible version of macOS, exiting..."
-    echo ""
-    exit
+if [[ "$(sw_vers -productVersion | cut -d"." -f2)" -lt 12 ]]; then
+	echo "Incompatible version of macOS, exiting..."
+	echo ""
+	exit
+	elif [[ "$(sw_vers -productVersion | cut -d"." -f2)" == 12 ]]; then
+		if [[ "$(sw_vers -productVersion | cut -d"." -f3)" -lt 4 ]]; then	
+			echo "Requires macOS 10.12.4 or higher. You have version: $(sw_vers -productVersion), exiting..."
+			echo ""
+			exit
+		fi
 fi
+
 echo "Checking System Integrity Protection status..."
 echo ""
 
