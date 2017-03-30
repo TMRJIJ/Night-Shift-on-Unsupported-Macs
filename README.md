@@ -1,7 +1,7 @@
 # Night Shift on Unsupported Macs
 
 Night Shift Enable Script for Unsupported Macs
-Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net "OS X Hackers") & dosdude1
+Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net "OS X Hackers") & Dosdude1
 
 ![alt tag](http://dl.osxhackers.net/.images/NightShift.png)
 
@@ -17,7 +17,7 @@ macOS Sierra 10.12.4 brings iOS's Night Shift mode to the Mac for the first time
 
 Night Shift is activated through the Displays section of System Preferences, where a setting to have it come on at sunset and turn off at sunrise is available. It can also be set to turn on and off at custom times. Night Shift can also be toggled on manually using the Notification Center or Siri. 
 
-Night Shift was introduced in macOS Sierra 10.12.4 (Build 16E144f and Public Beta-1) and is controlled by the CoreBrightness.framework. The official minimum requirements for this feature are: 
+Night Shift was introduced in macOS Sierra 10.12.4 (Build 16E144f and Public Beta 1) and is controlled by the CoreBrightness.framework. The official minimum requirements for this feature are: 
 
 - MacBookPro9,x
 - iMac13,x
@@ -28,12 +28,19 @@ Night Shift was introduced in macOS Sierra 10.12.4 (Build 16E144f and Public Bet
 
 Of course, this patch is intended to bypass this check completely.
 
+# OS Version Requirements
 
-__Warning: This patch has not been tested on macOS 10.12.5 Developer Previews yet.__
+- macOS 10.12.4 (16E195) Supported
+- macOS 10.12.5 Developer Preview 1 (16F43c) Supported
+
+
+__Warning: This patch might stop working in certain macOS 10.12.5 Developer Betas or later. Please be cautious and watch this repository for changes.__
 
 # Patching Instructions
 
 Note: System Integrity Protection must be disabled beforehand in order to patch the framework. You can re-enable it after you're done. Software Updates may revert this patch so always check this repository for updates. [HOW TO DISABLE SIP?](http://apple.stackexchange.com/questions/208478/how-do-i-disable-system-integrity-protection-sip-aka-rootless-on-os-x-10-11 )
+
+Always BACKUP before attempting this patch!
 
 1. Open the Terminal app in your Applications Folder
 2. Drag the 'Enable NightShift.sh' into the Terminal Window
@@ -52,9 +59,13 @@ sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions
 3. You will see that the Night Shift tab is no longer available in your System Preferences.
     
 
+# Known Bugs
 
+- Certain Third-party monitors are NOT Compatible with this Patch.
 
 # Support
 
-As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net or attempt it manually via Pike's original blog post.
+As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net, let me know in the Issues Tab, or attempt it manually via [Pike's original blog post.](https://pikeralpha.wordpress.com/2017/01/30/4398/)
+
+Have Fun!
 
