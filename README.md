@@ -49,19 +49,18 @@ Always BACKUP before attempting this patch!
 5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
 
 # Uninstall
-I haven't made an uninstallation script yet but you can easily revert back to the original CoreBrightness framework.
-1. Copy the Backup ~/CoreBrightness/CoreBrightness.framework' into '/System/Library/PrivateFrameworks/'
-Terminal Command:
-> sudo cp -r "~/CoreBrightness/CoreBrightness.framework" "/System/Library/PrivateFrameworks/"
-sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions/Current/CoreBrightness
 
-2. Restart your Mac
-3. You will see that the Night Shift tab is no longer available in your System Preferences.
+1. Open the Terminal app in your Applications Folder
+2. Drag the 'Uninstaller.sh' into the Terminal Window
+3. Following the instructions
+4. After Reverting. Restart your Mac.
+5. You will see that the Night Shift tab is no longer available.
     
 
 # Known Bugs
 
 - Certain Third-party monitors are NOT Compatible with this Patch.
+
 
 # Support
 
@@ -69,3 +68,4 @@ As such, if something goes wrong (like the Display tab in System Preference cras
 
 Have Fun!
 
+Updated April 4, 2017 
