@@ -31,7 +31,8 @@ Of course, this patch is intended to bypass this check completely.
 # OS Version Requirements
 
 - macOS 10.12.4 (16E195) Supported
-- macOS 10.12.5 Developer Preview 1 (16F43c) Supported
+- macOS 10.12.5 Developer Beta 1 (16F43c) Supported
+- macOS 10.12.5 Developer Beta 2 (16F54b) Supported
 
 
 __Warning: This patch might stop working in certain macOS 10.12.5 Developer Betas or later. Please be cautious and watch this repository for changes.__
