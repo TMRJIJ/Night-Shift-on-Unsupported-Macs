@@ -72,4 +72,4 @@ As such, if something goes wrong (like the Display tab in System Preference cras
 Have Fun!
 
 
-![alt tag](http://osxhackers.net/img/osxhfullblack.png)
+
