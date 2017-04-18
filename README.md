@@ -1,6 +1,6 @@
 # Night Shift on Unsupported Macs
 
-Updated April 13, 2017 
+Updated April 18, 2017 
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net "OS X Hackers") & Dosdude1
