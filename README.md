@@ -37,6 +37,7 @@ Of course, this patch is intended to bypass this check completely.
 - macOS 10.12.5 Developer Beta 2 (16F54b) Supported
 - macOS 10.12.5 Developer Beta 3 (16F60a) Supported
 - macOS 10.12.5 Developer Beta 4 (16F67a) Supported
+- macOS 10.12.5 Developer Beta 5 (16F71b) Supported
 
 macOS Public Betas are assume to match its respective Developer Builds.
 
@@ -50,7 +51,7 @@ Always BACKUP before attempting this patch!
 
 Installer Patching:
 
-1. Open the Installer in the Root of the Repository
+1. Open the Installer (.mpkg) in the Root of the Repository
 2. Follow the steps and agree to the terms 
 3. Install
 4. Upon Completion, Restart your Mac
