@@ -1,6 +1,6 @@
 # Night Shift on Unsupported Macs
 
-Updated April 24, 2017 
+Updated May 1, 2017 
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
@@ -47,6 +47,16 @@ __Warning: This patch might stop working in certain macOS 10.12.5 Developer Beta
 Note: System Integrity Protection must be disabled beforehand in order to patch the framework. You can re-enable it after you're done. Software Updates may revert this patch so always check this repository for updates. [HOW TO DISABLE SIP?](http://apple.stackexchange.com/questions/208478/how-do-i-disable-system-integrity-protection-sip-aka-rootless-on-os-x-10-11 )
 
 Always BACKUP before attempting this patch!
+
+Installer Patching:
+
+1. Open the Installer in the Root of the Repository
+2. Follow the steps and agree to the terms 
+3. Install
+4. Upon Completion, Restart your Mac
+5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
+
+Script Patching:
 
 1. Open the Terminal app in your Applications Folder
 2. Drag the 'Enable NightShift.sh' into the Terminal Window
