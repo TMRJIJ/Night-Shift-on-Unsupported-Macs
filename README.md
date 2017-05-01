@@ -48,6 +48,8 @@ Note: System Integrity Protection must be disabled beforehand in order to patch 
 
 Always BACKUP before attempting this patch!
 
+![alt tag](http://dl.osxhackers.net/.images/NS_Installer.png)
+
 Installer Patching:
 
 1. Open the Installer in the Root of the Repository
@@ -55,6 +57,9 @@ Installer Patching:
 3. Install
 4. Upon Completion, Restart your Mac
 5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
+
+
+![alt tag](http://dl.osxhackers.net/.images/NS_Script.png)
 
 Script Patching:
 
