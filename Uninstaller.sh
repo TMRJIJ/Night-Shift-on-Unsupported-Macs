@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Night Shift Enable Script for Unsupported Macs"
-echo "Uninstaller v1.0"
+echo "Uninstaller v1.1"
 echo ""
 echo "Script made by Isiah Johnson (TMRJIJ) / OS X Hackers and Dosdude1"
 echo ""
@@ -43,6 +43,8 @@ if [[ $prompt == 'y' ]]; then
 		sudo cp -r ~/CoreBrightness\ Backup/CoreBrightness.framework "/System/Library/PrivateFrameworks/"
 		echo "Original CoreBrightness will be Codesigned"
 		sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions/Current/CoreBrightness
+		echo "Removing Backup"
+		sudo rm -rf ~/CoreBrightness\ Backup
 		echo ""
 		echo "Finished. Please restart your Mac. After this, the Night Shift feature should be removed"
 		echo "Enjoy"
