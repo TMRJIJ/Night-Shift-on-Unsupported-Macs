@@ -1,6 +1,6 @@
 # Night Shift on Unsupported Macs
 
-Updated May 1, 2017 
+Updated May 15, 2017 
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
@@ -33,15 +33,8 @@ Of course, this patch is intended to bypass this check completely.
 # OS Version Requirements
 
 - macOS 10.12.4 (16E195) Supported
-- macOS 10.12.5 Developer Beta 1 (16F43c) Supported
-- macOS 10.12.5 Developer Beta 2 (16F54b) Supported
-- macOS 10.12.5 Developer Beta 3 (16F60a) Supported
-- macOS 10.12.5 Developer Beta 4 (16F67a) Supported
-- macOS 10.12.5 Developer Beta 5 (16F71b) Supported
+- macOS 10.12.5  (16F73) Supported
 
-macOS Public Betas are assume to match its respective Developer Builds.
-
-__Warning: This patch might stop working in certain macOS 10.12.5 Developer Betas or later. Please be cautious and watch this repository for changes.__
 
 # Patching Instructions
 
@@ -51,14 +44,11 @@ Always BACKUP before attempting this patch!
 
 Installer Patching:
 
-1. Open the Installer (.mpkg) in the Root of the Repository
+1. Open the Installer in the Root of the Repository
 2. Follow the steps and agree to the terms 
 3. Install
 4. Upon Completion, Restart your Mac
 5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
-
-![alt tag](http://dl.osxhackers.net/.images/NS_Installer.png)
-
 
 Script Patching:
 
@@ -67,8 +57,6 @@ Script Patching:
 3. Following the instructions
 4. After Patching. Restart your Mac.
 5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
-
-![alt tag](http://dl.osxhackers.net/.images/NS_Script.png)
 
 # Uninstall
 

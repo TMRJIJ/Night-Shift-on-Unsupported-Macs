@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Night Shift Enable Script for Unsupported Macs"
-echo "version 1.21"
+echo "version 1.4"
 echo "Script made by Isiah Johnson (TMRJIJ) / OS X Hackers and Dosdude1"
 echo ""
 echo "All credits for this work goes to Piker Alpha. Thanks!"

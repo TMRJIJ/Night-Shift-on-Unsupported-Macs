@@ -513,7 +513,7 @@
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>1.3</string>
+				<string>1.4</string>
 			</dict>
 			<key>UUID</key>
 			<string>A894DC72-4152-4A0F-85CC-6C557981A02C</string>
@@ -676,6 +676,50 @@
 							<integer>0</integer>
 						</dict>
 					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>French</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseFr.rtf</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>German</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseDe.rtf</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>Russian</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseRu.rtf</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>Spanish</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseEs.rtf</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
 				</array>
 				<key>MODE</key>
 				<integer>0</integer>
@@ -691,6 +735,50 @@
 						<dict>
 							<key>PATH</key>
 							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/InstallerReadMe.rtfd</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>French</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeFr.rtfd</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>German</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeDe.rtfd</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>Russian</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeRu.rtfd</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>Spanish</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeEs.rtfd</string>
 							<key>PATH_TYPE</key>
 							<integer>0</integer>
 						</dict>

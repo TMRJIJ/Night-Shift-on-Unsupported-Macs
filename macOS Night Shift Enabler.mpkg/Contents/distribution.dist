@@ -21,7 +21,7 @@
     <!--+==========================+
         |    Package References    |
         +==========================+-->
-    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="1.3" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
+    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="1.4" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
     <!--+==========================+
         |    JavaScript Scripts    |
         +==========================+-->
