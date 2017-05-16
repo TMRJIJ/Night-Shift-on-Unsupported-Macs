@@ -1,17 +1,19 @@
 # Night Shift on Unsupported Macs
 
-Updated May 15, 2017 
+Updated May 16, 2017 
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
 
-![alt tag](http://dl.osxhackers.net/.images/NightShift.png)
+![alt tag](http://osxhackers.net/img/sunsetLogo.jpg)
 
 This script will replace the CoreBrightness.framework with one already patched with the matching hex value in CoreBrightness.framework for most older/unsupported hardware.
 
 All credits for this work goes to Piker Alpha. Thanks!
 As requested, this script is intended as non-commerical, with no Donation requests, Open Source, and must give thanks to Pike!
 Blog URL: https://pikeralpha.wordpress.com/2017/01/30/4398/
+
+![alt tag](http://dl.osxhackers.net/.images/NightShift.png)
 
 # History
 
@@ -33,7 +35,8 @@ Of course, this patch is intended to bypass this check completely.
 # OS Version Requirements
 
 - macOS 10.12.4 (16E195) Supported
-- macOS 10.12.5  (16F73) Supported
+- macOS 10.12.5 (16F73) Supported
+- macOS 10.12.6 Developer Preview 1 (16G8c) Supported
 
 
 # Patching Instructions
@@ -50,6 +53,8 @@ Installer Patching:
 4. Upon Completion, Restart your Mac
 5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
 
+![alt tag](http://dl.osxhackers.net/.images/NS_Installer.png)
+
 Script Patching:
 
 1. Open the Terminal app in your Applications Folder
@@ -57,6 +62,8 @@ Script Patching:
 3. Following the instructions
 4. After Patching. Restart your Mac.
 5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
+
+![alt tag](http://dl.osxhackers.net/.images/NS_Script.png)
 
 # Uninstall
 
