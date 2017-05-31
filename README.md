@@ -1,6 +1,6 @@
 # Night Shift on Unsupported Macs
 
-Updated May 16, 2017 
+Updated May 31, 2017 
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
@@ -36,7 +36,8 @@ Of course, this patch is intended to bypass this check completely.
 
 - macOS 10.12.4 (16E195) Supported
 - macOS 10.12.5 (16F73) Supported
-- macOS 10.12.6 Developer Preview 1 (16G8c) Supported
+- macOS 10.12.6 Developer Beta 1 (16G8c) Supported
+- macOS 10.12.6 Developer Beta 2 (16G12b) Supported
 
 
 # Patching Instructions
@@ -78,6 +79,9 @@ Script Patching:
 
 - Certain Third-party monitors are NOT Compatible with this Patch.
 
+# Announcements
+
+- May 31, 2017 - I am aware of the issue where the script and installer fails when Filesystem Protections are enabled. Will have a fix committed over the weekend.
 
 # Support
 
