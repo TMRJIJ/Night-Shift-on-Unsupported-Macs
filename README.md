@@ -1,11 +1,15 @@
 # Night Shift on Unsupported Macs
 
+<<<<<<< HEAD
 Updated September 3, 2017 
+=======
+Updated May 31, 2017 
+>>>>>>> 4efac26275dca7085170d7e959f82b076554a27e
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
 
-![alt tag](http://dl.osxhackers.net/.images/NightShift.png)
+![alt tag](http://osxhackers.net/img/sunsetLogo.jpg)
 
 This script will replace the CoreBrightness.framework with one already patched with the matching hex value in CoreBrightness.framework for most older/unsupported hardware.
 
@@ -17,6 +21,8 @@ Blog URL: [Click Here](https://pikeralpha.wordpress.com/2017/01/30/4398/)
 
 - I am currently testing macOS High Sierra. Now allowing Feature Requests via Email or Pull Requesting.
 - Thinking into solutions that keep the framework patched throughout updates. Open to suggestions.
+
+![alt tag](http://dl.osxhackers.net/.images/NightShift.png)
 
 # History
 
@@ -38,12 +44,18 @@ Of course, this patch is intended to bypass this check completely.
 # OS Version Requirements
 
 - macOS 10.12.4 (16E195) Supported
+<<<<<<< HEAD
 - macOS 10.12.5  (16F73) Supported
 - macOS 10.12.6 (16G29) Supported
 
 Currently Testing 
 
 - macOS 10.13 Beta Developer Beta 7-9
+=======
+- macOS 10.12.5 (16F73) Supported
+- macOS 10.12.6 Developer Beta 1 (16G8c) Supported
+- macOS 10.12.6 Developer Beta 2 (16G12b) Supported
+>>>>>>> 4efac26275dca7085170d7e959f82b076554a27e
 
 
 # Patching Instructions
@@ -60,6 +72,8 @@ Installer Patching:
 4. Upon Completion, Restart your Mac
 5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
 
+![alt tag](http://dl.osxhackers.net/.images/NS_Installer.png)
+
 Script Patching:
 
 1. Open the Terminal app in your Applications Folder
@@ -67,6 +81,8 @@ Script Patching:
 3. Following the instructions
 4. After Patching. Restart your Mac.
 5. You will see that the Night Shift tab is now available in System Preferences > Display as well as the toggle at the top of your Notification Center.
+
+![alt tag](http://dl.osxhackers.net/.images/NS_Script.png)
 
 # Uninstall
 
@@ -82,6 +98,9 @@ Script Patching:
 - Certain Third-party monitors are NOT Compatible with this Patch.
 - macOS 10.13 Beta may have alterations in the Framework. 
 
+# Announcements
+
+- May 31, 2017 - I am aware of the issue where the script and installer fails when Filesystem Protections are enabled. Will have a fix committed over the weekend.
 
 # Support
 
