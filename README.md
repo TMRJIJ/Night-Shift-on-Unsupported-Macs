@@ -1,6 +1,6 @@
 # Night Shift on Unsupported Macs
 
-Updated May 15, 2017 
+Updated September 3, 2017 
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
@@ -11,7 +11,12 @@ This script will replace the CoreBrightness.framework with one already patched w
 
 All credits for this work goes to Piker Alpha. Thanks!
 As requested, this script is intended as non-commerical, with no Donation requests, Open Source, and must give thanks to Pike!
-Blog URL: https://pikeralpha.wordpress.com/2017/01/30/4398/
+Blog URL: [Click Here](https://pikeralpha.wordpress.com/2017/01/30/4398/)
+
+# Announcements
+
+- I am currently testing macOS High Sierra. Now allowing Feature Requests via Email or Pull Requesting.
+- Thinking into solutions that keep the framework patched throughout updates. Open to suggestions.
 
 # History
 
@@ -19,7 +24,7 @@ macOS Sierra 10.12.4 brings iOS's Night Shift mode to the Mac for the first time
 
 Night Shift is activated through the Displays section of System Preferences, where a setting to have it come on at sunset and turn off at sunrise is available. It can also be set to turn on and off at custom times. Night Shift can also be toggled on manually using the Notification Center or Siri. 
 
-Night Shift was introduced in macOS Sierra 10.12.4 (Build 16E144f and Public Beta 1) and is controlled by the CoreBrightness.framework. The official minimum requirements for this feature are: 
+Night Shift was introduced in macOS Sierra 10.12.4 (16E144f) and is controlled by the CoreBrightness.framework. The official minimum requirements for this feature are: 
 
 - MacBookPro9,x
 - iMac13,x
@@ -34,6 +39,11 @@ Of course, this patch is intended to bypass this check completely.
 
 - macOS 10.12.4 (16E195) Supported
 - macOS 10.12.5  (16F73) Supported
+- macOS 10.12.6 (16G29) Supported
+
+Currently Testing 
+
+- macOS 10.13 Beta Developer Beta 7-9
 
 
 # Patching Instructions
@@ -70,6 +80,7 @@ Script Patching:
 # Known Bugs
 
 - Certain Third-party monitors are NOT Compatible with this Patch.
+- macOS 10.13 Beta may have alterations in the Framework. 
 
 
 # Support

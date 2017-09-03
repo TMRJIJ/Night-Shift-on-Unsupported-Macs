@@ -1,7 +1,7 @@
 #!/bin/bash
 
 echo "Night Shift Enable Script for Unsupported Macs"
-echo "version 1.4"
+echo "version 1.5"
 echo "Script made by Isiah Johnson (TMRJIJ) / OS X Hackers and Dosdude1"
 echo ""
 echo "All credits for this work goes to Piker Alpha. Thanks!"
@@ -9,7 +9,7 @@ echo "As told, this script is intended as non-commerical, with no Donation reque
 echo "URL: https://pikeralpha.wordpress.com/2017/01/30/4398/"
 echo ""
 # Details about the script
-echo "Night Shift was introduced in macOS Sierra 10.12.4 (Build 16E144f and Public Beta-1) and is controlled by the CoreBrightness.framework. The official minimum requirements for this feature are: 
+echo "Night Shift was introduced in macOS Sierra 10.12.4 (16E144f) and is controlled by the CoreBrightness.framework. The official minimum requirements for this feature are: 
 
 MacBookPro9,x
 iMac13,x
@@ -42,19 +42,23 @@ if [[ "$(sw_vers -productVersion | cut -d"." -f2)" -lt 12 ]]; then
 		fi
 fi
 
+
+
 # Check if SIP is enabled. Exits if enabled.
 echo "Checking System Integrity Protection status..."
 echo ""
 
 if [[ !($(csrutil status | grep enabled | wc -l) -eq 0) ]]; then
-    echo "SIP is enabled on this system. Please boot into Recovery HD or a Sierra Installer USB drive, open a new Terminal Window, and enter 'csrutil disable'. When completed, reboot back into your standard Sierra install, and run this script again."
-    echo ""
-    exit
+	echo "SIP is enabled on this system. Please boot into Recovery HD or a Sierra Installer USB drive, open a new Terminal Window, and enter 'csrutil disable'. When completed, reboot back into your standard Sierra install, and run this script again."
+	echo ""
+	exit
+elif [[ "$(csrutil status | head -n 1)" == *"status: enabled (Custom Configuration)"* ]]; then
+	echo "The SIP status has a Custom Configuration. The script might or mighty not work."
 fi
 
 # Actual Patching of Framework
 read -p "Ready to begin Patching? [y/n]: " prompt
-if [[ $prompt == 'y' ]]; then
+	if [[ $prompt == 'y' ]]; then
 		echo "Let get started then"
 		echo ""
 		echo "Backing Up older CoreBrightness Framework. It's in your Home Folder"
@@ -62,8 +66,8 @@ if [[ $prompt == 'y' ]]; then
 		sudo cp -r "/System/Library/PrivateFrameworks/CoreBrightness.framework" ~/CoreBrightness\ Backup/
 		echo "Downloading and Replacing Original with Modified Framework"
 		curl -o ~/CoreBrightness.framework.zip "http://dosdude1.com/sierra/NightShiftPatch/CoreBrightness.framework.zip"
-        sudo unzip -o ~/CoreBrightness.framework.zip -d "/System/Library/PrivateFrameworks/"
-        rm ~/CoreBrightness.framework.zip
+        		sudo unzip -o ~/CoreBrightness.framework.zip -d "/System/Library/PrivateFrameworks/"
+        		rm ~/CoreBrightness.framework.zip
 		echo "New CoreBrightness will be Codesigned"
 		sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions/Current/CoreBrightness
 		echo ""
