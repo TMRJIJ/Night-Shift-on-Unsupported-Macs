@@ -42,7 +42,6 @@ Of course, this patch is intended to bypass this check completely.
 # OS Version Requirements
 
 - macOS 10.12.4 (16E195) Supported
-<<<<<<< HEAD
 - macOS 10.12.5  (16F73) Supported
 - macOS 10.12.6 (16G29) Supported
 
@@ -92,9 +91,7 @@ Script Patching:
 - Certain Third-party monitors are NOT Compatible with this Patch.
 - macOS 10.13 Beta may have alterations in the Framework. 
 
-# Announcements
 
-- May 31, 2017 - I am aware of the issue where the script and installer fails when Filesystem Protections are enabled. Will have a fix committed over the weekend.
 
 # Support
 
