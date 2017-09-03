@@ -1,10 +1,8 @@
 # Night Shift on Unsupported Macs
 
-<<<<<<< HEAD
+
 Updated September 3, 2017 
-=======
-Updated May 31, 2017 
->>>>>>> 4efac26275dca7085170d7e959f82b076554a27e
+
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
@@ -51,11 +49,7 @@ Of course, this patch is intended to bypass this check completely.
 Currently Testing 
 
 - macOS 10.13 Beta Developer Beta 7-9
-=======
-- macOS 10.12.5 (16F73) Supported
-- macOS 10.12.6 Developer Beta 1 (16G8c) Supported
-- macOS 10.12.6 Developer Beta 2 (16G12b) Supported
->>>>>>> 4efac26275dca7085170d7e959f82b076554a27e
+
 
 
 # Patching Instructions
