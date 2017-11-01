@@ -1,7 +1,8 @@
 # Night Shift on Unsupported Macs
 
 
-Updated September 3, 2017 
+Updated November 1, 2017 
+Note: I am aware of the issue in High Sierra and will fix it accordingly in the next update.
 
 
 Night Shift Enable Script for Unsupported Macs
@@ -41,13 +42,11 @@ Of course, this patch is intended to bypass this check completely.
 
 # OS Version Requirements
 
-- macOS 10.12.4 (16E195) Supported
-- macOS 10.12.5  (16F73) Supported
-- macOS 10.12.6 (16G29) Supported
+- macOS 10.12 Sierra Supported
 
 Currently Testing 
 
-- macOS 10.13 Beta Developer Beta 7-9
+- macOS 10.13.2 
 
 
 
@@ -89,7 +88,7 @@ Script Patching:
 # Known Bugs
 
 - Certain Third-party monitors are NOT Compatible with this Patch.
-- macOS 10.13 Beta may have alterations in the Framework. 
+- macOS 10.13  has alterations in the Framework that will result in the Display Preference in System Preferences to not work, however the Night Shift toggle via Notification Center does seem to work. I will address this issue in the next update.
 
 
 
