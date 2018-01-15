@@ -1,7 +1,7 @@
 # Night Shift on Unsupported Macs
 
 
-Updated November 1, 2017 
+Updated January 15, 2018 
 Note: I am aware of the issue in High Sierra and will fix it accordingly in the next update.
 
 
@@ -13,6 +13,8 @@ Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/Nig
 This script will replace the CoreBrightness.framework with one already patched with the matching hex value in CoreBrightness.framework for most older/unsupported hardware.
 
 All credits for this work goes to Piker Alpha. Thanks!
+Special thanks to [pookjw](https://github.com/pookjw/), PeterHolbrook, [dosdude1](https://github.com/dosdude1/), and [aonez](https://github.com/aonez/) for their continued critiques and support from their own source work.
+
 As requested, this script is intended as non-commerical, with no Donation requests, Open Source, and must give thanks to Pike!
 Blog URL: [Click Here](https://pikeralpha.wordpress.com/2017/01/30/4398/)
 
@@ -97,6 +99,10 @@ Script Patching:
 As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net, let me know in the Issues Tab, or attempt it manually via [Pike's original blog post.](https://pikeralpha.wordpress.com/2017/01/30/4398/)
 
 Have Fun!
+
+# Other Notable Night Shift Patches
+1. [NightPatch by pookjw](https://github.com/pookjw/NightPatch)
+2. [NightShiftPatcher by aonez](https://github.com/aonez/NightShiftPatcher)
 
 
 

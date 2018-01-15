@@ -4,13 +4,16 @@
 COREBRIGHTNESS='/System/Library/PrivateFrameworks/CoreBrightness.framework'
 OFFSET="0x$(nm /System/Library/PrivateFrameworks/CoreBrightness.framework/Versions/A/CoreBrightness | grep _ModelMinVersion | cut -d' ' -f 1 | sed -e 's/^0*//g')"
 MACMODEL="$(ioreg -l | awk '/product-name/ { split($0, line, "\""); printf("%s\n", line[4]); }')"
+APPSUPPORT="/Library/Application Support/Night Shift/"
 
 
 echo "Night Shift Enable Script for Unsupported Macs"
-echo "version 1.6"
+echo "version 1.61"
 echo "Script made by Isiah Johnson (TMRJIJ) / OS X Hackers and Dosdude1"
 echo ""
 echo "All credits for this work goes to Piker Alpha. Thanks!"
+echo "Special thanks to pookjw, PeterHolbrook, dosdude1, and aonez for their continued critiques and support from their own source work."
+echo ""
 echo "This script is intended as non-commerical, with no Donation requests, Open Source, and must give thanks to PIke!"
 echo "URL: https://pikeralpha.wordpress.com/2017/01/30/4398/"
 echo ""
@@ -40,12 +43,11 @@ echo "Checking System Version..."
 echo ""
 
 if [[ "$(sw_vers -productVersion | cut -d"." -f2)" -lt 12 ]]; then
-	echo "Incompatible version of macOS, exiting..."
-	echo ""
+	echo "Incompatible version of macOS, install macOS Sierra and run this script again"
 	exit
 	elif [[ "$(sw_vers -productVersion | cut -d"." -f2)" == 12 ]]; then
 		if [[ "$(sw_vers -productVersion | cut -d"." -f3)" -lt 4 ]]; then	
-			echo "Requires macOS 10.12.4 or higher. You have version: $(sw_vers -productVersion), exiting..."
+			echo "Requires macOS 10.12.4 or higher. You have version: $(sw_vers -productVersion), install the newest macOS update and run this script again"
 			echo ""
 			exit
 		fi
@@ -62,12 +64,12 @@ if [[ !($(csrutil status | grep enabled | wc -l) -eq 0) ]]; then
 	echo ""
 	exit
 elif [[ "$(csrutil status | head -n 1)" == *"status: enabled (Custom Configuration)"* ]]; then
-	echo "The SIP status has a Custom Configuration. The script might or mighty not work."
+	echo "The SIP status has a Custom Configuration. The script might not work."
 fi
 
 # Check if Command Line Tools from XCode are installed
 if [[ ! -d "$("xcode-select" -p)" ]]; then
-		echo "Your Mac doesn't appear to have Command Line Tool. Enter 'xcode-select --install' command to install it and run this script again."
+		echo "Your Mac doesn't appear to have Command Line Tool. Please type 'xcode-select --install' command in the terminal to install it, then run this script again."
 		exit
 	fi
 
@@ -98,6 +100,8 @@ read -p "Ready to begin Patching? [y/n]: " prompt
 		echo "New CoreBrightness will be Codesigned"
 		sudo codesign -f -s - /S*/L*/PrivateFrameworks/CoreBrightness.framework/Versions/Current/CoreBrightness
 		echo ""
+		echo "Backing up new CoreBrightness Framework in Application Support Folder"
+		sudo cp -r $COREBRIGHTNESS $APPSUPPORT
 		echo "Finished. Please restart your Mac. After this, there should be a Night Shift Tab within System Preference > Displays"
 		echo "Enjoy"
 		

@@ -8,11 +8,11 @@ function vertifySIP {
 		return 0
 	elif [[ "$(csrutil status | head -n 1)" == *"status: enabled (Custom Configuration)"* ]]; then
 		echo "The SIP status has a Custom Configuration. The script might or mighty not work."
-		return 1	
+		return 1		
 	else	
 		echo ""
 		echo "System Integrity Protection is already disabled"
-		return 2
+		return 3
 	fi
 			
 		

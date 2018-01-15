@@ -51,7 +51,41 @@
 							<array>
 								<dict>
 									<key>CHILDREN</key>
-									<array/>
+									<array>
+										<dict>
+											<key>CHILDREN</key>
+											<array>
+												<dict>
+													<key>CHILDREN</key>
+													<array/>
+													<key>GID</key>
+													<integer>80</integer>
+													<key>PATH</key>
+													<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/BuildVersions.txt</string>
+													<key>PATH_TYPE</key>
+													<integer>0</integer>
+													<key>PERMISSIONS</key>
+													<integer>420</integer>
+													<key>TYPE</key>
+													<integer>3</integer>
+													<key>UID</key>
+													<integer>0</integer>
+												</dict>
+											</array>
+											<key>GID</key>
+											<integer>80</integer>
+											<key>PATH</key>
+											<string>Night Shift</string>
+											<key>PATH_TYPE</key>
+											<integer>2</integer>
+											<key>PERMISSIONS</key>
+											<integer>509</integer>
+											<key>TYPE</key>
+											<integer>2</integer>
+											<key>UID</key>
+											<integer>0</integer>
+										</dict>
+									</array>
 									<key>GID</key>
 									<integer>80</integer>
 									<key>PATH</key>
@@ -466,6 +500,12 @@
 				</dict>
 				<key>PAYLOAD_TYPE</key>
 				<integer>0</integer>
+				<key>SHOW_INVISIBLE</key>
+				<false/>
+				<key>SPLIT_FORKS</key>
+				<true/>
+				<key>TREAT_MISSING_FILES_AS_WARNING</key>
+				<false/>
 				<key>VERSION</key>
 				<integer>3</integer>
 			</dict>
@@ -475,6 +515,11 @@
 				<dict>
 					<key>PATH</key>
 					<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/InstallerScript.sh</string>
+					<key>PATH_TYPE</key>
+					<integer>0</integer>
+				</dict>
+				<key>PREINSTALL_PATH</key>
+				<dict>
 					<key>PATH_TYPE</key>
 					<integer>0</integer>
 				</dict>
@@ -504,17 +549,27 @@
 				<integer>1</integer>
 				<key>CONCLUSION_ACTION</key>
 				<integer>2</integer>
+				<key>FOLLOW_SYMBOLIC_LINKS</key>
+				<false/>
 				<key>IDENTIFIER</key>
 				<string>net.OSXHackers.pkg.NightShift</string>
+				<key>LOCATION</key>
+				<integer>0</integer>
 				<key>NAME</key>
 				<string>macOS Night Shift Enabler</string>
 				<key>OVERWRITE_PERMISSIONS</key>
 				<false/>
+				<key>PAYLOAD_SIZE</key>
+				<integer>-1</integer>
+				<key>RELOCATABLE</key>
+				<false/>
 				<key>USE_HFS+_COMPRESSION</key>
 				<true/>
 				<key>VERSION</key>
-				<string>1.4</string>
+				<string>2.1</string>
 			</dict>
+			<key>TYPE</key>
+			<integer>0</integer>
 			<key>UUID</key>
 			<string>A894DC72-4152-4A0F-85CC-6C557981A02C</string>
 		</dict>
@@ -552,7 +607,7 @@
 					<integer>0</integer>
 				</dict>
 				<key>CUSTOM</key>
-				<integer>1</integer>
+				<true/>
 				<key>SCALING</key>
 				<integer>1</integer>
 			</dict>
@@ -590,8 +645,6 @@
 						<dict/>
 					</dict>
 				</dict>
-				<key>INSTALLATION TYPE</key>
-				<integer>0</integer>
 				<key>MODE</key>
 				<integer>1</integer>
 			</dict>
@@ -661,8 +714,6 @@
 			</dict>
 			<key>LICENSE</key>
 			<dict>
-				<key>KEYWORDS</key>
-				<dict/>
 				<key>LOCALIZATIONS</key>
 				<array>
 					<dict>
@@ -672,28 +723,6 @@
 						<dict>
 							<key>PATH</key>
 							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/License.rtf</string>
-							<key>PATH_TYPE</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<dict>
-						<key>LANGUAGE</key>
-						<string>French</string>
-						<key>VALUE</key>
-						<dict>
-							<key>PATH</key>
-							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseFr.rtf</string>
-							<key>PATH_TYPE</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<dict>
-						<key>LANGUAGE</key>
-						<string>German</string>
-						<key>VALUE</key>
-						<dict>
-							<key>PATH</key>
-							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseDe.rtf</string>
 							<key>PATH_TYPE</key>
 							<integer>0</integer>
 						</dict>
@@ -711,11 +740,33 @@
 					</dict>
 					<dict>
 						<key>LANGUAGE</key>
+						<string>French</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseFr.rtf</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
 						<string>Spanish</string>
 						<key>VALUE</key>
 						<dict>
 							<key>PATH</key>
 							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseEs.rtf</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>German</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/LicenseDe.rtf</string>
 							<key>PATH_TYPE</key>
 							<integer>0</integer>
 						</dict>
@@ -741,28 +792,6 @@
 					</dict>
 					<dict>
 						<key>LANGUAGE</key>
-						<string>French</string>
-						<key>VALUE</key>
-						<dict>
-							<key>PATH</key>
-							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeFr.rtfd</string>
-							<key>PATH_TYPE</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<dict>
-						<key>LANGUAGE</key>
-						<string>German</string>
-						<key>VALUE</key>
-						<dict>
-							<key>PATH</key>
-							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeDe.rtfd</string>
-							<key>PATH_TYPE</key>
-							<integer>0</integer>
-						</dict>
-					</dict>
-					<dict>
-						<key>LANGUAGE</key>
 						<string>Russian</string>
 						<key>VALUE</key>
 						<dict>
@@ -774,11 +803,33 @@
 					</dict>
 					<dict>
 						<key>LANGUAGE</key>
+						<string>French</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeFr.rtfd</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
 						<string>Spanish</string>
 						<key>VALUE</key>
 						<dict>
 							<key>PATH</key>
 							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeEs.rtfd</string>
+							<key>PATH_TYPE</key>
+							<integer>0</integer>
+						</dict>
+					</dict>
+					<dict>
+						<key>LANGUAGE</key>
+						<string>German</string>
+						<key>VALUE</key>
+						<dict>
+							<key>PATH</key>
+							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/ReadMeDe.rtfd</string>
 							<key>PATH_TYPE</key>
 							<integer>0</integer>
 						</dict>
@@ -889,47 +940,32 @@
 					<integer>3</integer>
 					<key>DICTIONARY</key>
 					<dict>
-						<key>IC_REQUIREMENT_SCRIPT_ARGUMENTS</key>
-						<array/>
-						<key>IC_REQUIREMENT_SCRIPT_COMPARATOR</key>
+						<key>IC_REQUIREMENT_OS_DISK_TYPE</key>
 						<integer>0</integer>
-						<key>IC_REQUIREMENT_SCRIPT_EMBED</key>
-						<true/>
-						<key>IC_REQUIREMENT_SCRIPT_PATH</key>
-						<dict>
-							<key>PATH</key>
-							<string>/Users/isiahjohnson/Documents/XCode Projects/Night Shift/Resources/vertifyOS.sh</string>
-							<key>PATH_TYPE</key>
-							<integer>0</integer>
-						</dict>
-						<key>IC_REQUIREMENT_SCRIPT_VALUE</key>
+						<key>IC_REQUIREMENT_OS_DISTRIBUTION_TYPE</key>
 						<integer>0</integer>
+						<key>IC_REQUIREMENT_OS_MINIMUM_VERSION</key>
+						<integer>101204</integer>
 					</dict>
 					<key>IC_REQUIREMENT_CHECK_TYPE</key>
-					<integer>0</integer>
+					<integer>1</integer>
 					<key>IDENTIFIER</key>
-					<string>fr.whitebox.Packages.requirement.scripts</string>
+					<string>fr.whitebox.Packages.requirement.os</string>
 					<key>MESSAGE</key>
 					<array>
 						<dict>
 							<key>LANGUAGE</key>
 							<string>English</string>
-							<key>SECONDARY_VALUE</key>
-							<string>Requires macOS 10.12.4 or higher</string>
 							<key>VALUE</key>
-							<string>Incompatible version of macOS</string>
+							<string>Imcompatible version of macOS. Please update to macOS 10.12.4 or later.</string>
 						</dict>
 					</array>
 					<key>NAME</key>
-					<string>OSCheck</string>
+					<string>Operating System</string>
 					<key>STATE</key>
 					<true/>
 				</dict>
 			</array>
-			<key>POSTINSTALL_PATH</key>
-			<dict/>
-			<key>PREINSTALL_PATH</key>
-			<dict/>
 			<key>RESOURCES</key>
 			<array/>
 			<key>ROOT_VOLUME_ONLY</key>
@@ -937,8 +973,6 @@
 		</dict>
 		<key>PROJECT_SETTINGS</key>
 		<dict>
-			<key>ADVANCED_OPTIONS</key>
-			<dict/>
 			<key>BUILD_FORMAT</key>
 			<integer>1</integer>
 			<key>BUILD_PATH</key>
@@ -1118,6 +1152,10 @@
 			</array>
 			<key>NAME</key>
 			<string>macOS Night Shift Enabler</string>
+			<key>PAYLOAD_ONLY</key>
+			<false/>
+			<key>TREAT_MISSING_PRESENTATION_DOCUMENTS_AS_WARNING</key>
+			<false/>
 		</dict>
 	</dict>
 	<key>TYPE</key>

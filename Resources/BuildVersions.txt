@@ -15,6 +15,4 @@ Board ID:
 16F67a
 16F71b
 16G8c
-16G8c
-16G8c
-16G8c
+

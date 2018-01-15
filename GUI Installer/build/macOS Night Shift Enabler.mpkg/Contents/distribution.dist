@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<installer-script authoringTool="Packages" authoringToolVersion="1.1.2" authoringToolBuild="2B104" minSpecVersion="1.0">
+<installer-gui-script authoringTool="Packages" authoringToolVersion="1.2.1" authoringToolBuild="229" minSpecVersion="1.0">
     <options rootVolumeOnly="true" customize="never" allow-external-scripts="true"/>
     <installation-check script="installation_check()"/>
+    <volume-check script="volume_check()"/>
     <!--+==========================+
         |       Presentation       |
         +==========================+-->
@@ -21,30 +22,30 @@
     <!--+==========================+
         |    Package References    |
         +==========================+-->
-    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="1.4" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
+    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="2.1" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
     <!--+==========================+
         |    JavaScript Scripts    |
         +==========================+-->
     <script>
 
 	const __IC_FLAT_DISTRIBUTION__=false;
-	const IC_DISK_TYPE_DESTINATION=0;
-	const IC_DISK_TYPE_STARTUP_DISK=1;
 	const IC_OS_DISTRIBUTION_TYPE_ANY=0;
 	const IC_OS_DISTRIBUTION_TYPE_CLIENT=1;
+	const IC_DISK_TYPE_DESTINATION=0;
 	const IC_OS_DISTRIBUTION_TYPE_SERVER=2;
+	const IC_DISK_TYPE_STARTUP_DISK=1;
 
-	const IC_CPU_ARCHITECTURE_ANY=0;
 	const IC_CPU_ARCHITECTURE_POWERPC=18;
+	const IC_CPU_ARCHITECTURE_TYPE_32=1;
 	const IC_CPU_ARCHITECTURE_INTEL=7;
 	const IC_CPU_ARCHITECTURE_TYPE_ANY=0;
-	const IC_CPU_ARCHITECTURE_TYPE_32=1;
+	const IC_CPU_ARCHITECTURE_ANY=0;
 	const IC_CPU_ARCHITECTURE_TYPE_64=2;
 
-	const IC_COMPARATOR_IS_LESS=-1;
 	const IC_COMPARATOR_IS_EQUAL=0;
 	const IC_COMPARATOR_IS_GREATER=1;
 	const IC_COMPARATOR_IS_NOT_EQUAL=2;
+	const IC_COMPARATOR_IS_LESS=-1;
 
 	function IC_CheckOS(inDiskType,inMustBeInstalled,inMinimumVersion,inDistributionType)
 	{
@@ -65,6 +66,11 @@
 			{
 				return (inMustBeInstalled==false);
 			}
+			
+			if (inMustBeInstalled==false)
+			{
+				return false;
+			}
 		}
 		else
 		{
@@ -72,9 +78,7 @@
 		}
 		
 		if (system.compareVersions(tOSVersion,inMinimumVersion)==-1)
-		{
 			return false;
-		}
 		
 		/* Check Distribution Type */
 		
@@ -275,25 +279,26 @@
 					my.result.message = system.localizedString('REQUIREMENT_FAILED_DESCRIPTION_INSTALLATION_CHECK_2');
 					my.result.type = 'Fatal';
 				}
-
-				if (tResult==true)
-				{
-					var tScriptArguments3=new Array();
-
-					tResult=IC_CheckScriptReturnValue('vertifyOS.sh',tScriptArguments3,IC_COMPARATOR_IS_EQUAL,0);
-
-					if (tResult==false)
-					{
-						my.result.title = system.localizedString('REQUIREMENT_FAILED_MESSAGE_INSTALLATION_CHECK_3');
-						my.result.message = system.localizedString('REQUIREMENT_FAILED_DESCRIPTION_INSTALLATION_CHECK_3');
-						my.result.type = 'Fatal';
-					}
-				}
 			}
 		}
 
 		return tResult;
 	}
 
+	function volume_check()
+	{
+		var tResult;
+
+		tResult=IC_CheckOS(IC_DISK_TYPE_DESTINATION,true,'10.12.4',IC_OS_DISTRIBUTION_TYPE_ANY);
+
+		if (tResult==false)
+		{
+			my.result.message = system.localizedString('REQUIREMENT_FAILED_MESSAGE_VOLUME_CHECK_3');
+			my.result.type = 'Fatal';
+		}
+
+		return tResult;
+	}
+
     </script>
-</installer-script>
+</installer-gui-script>
