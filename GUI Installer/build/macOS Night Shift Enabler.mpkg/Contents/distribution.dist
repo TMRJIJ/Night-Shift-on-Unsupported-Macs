@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<installer-gui-script authoringTool="Packages" authoringToolVersion="1.2.1" authoringToolBuild="229" minSpecVersion="1.0">
+<installer-gui-script authoringTool="Packages" authoringToolVersion="1.2.5" authoringToolBuild="522" minSpecVersion="1.0">
     <options rootVolumeOnly="true" customize="never" allow-external-scripts="true"/>
     <installation-check script="installation_check()"/>
     <volume-check script="volume_check()"/>
@@ -8,6 +8,7 @@
         +==========================+-->
     <title>DISTRIBUTION_TITLE</title>
     <background file="background" scaling="tofit" alignment="right"/>
+    <background-darkAqua file="background" scaling="tofit" alignment="right"/>
     <readme file="readme.rtfd"/>
     <license file="license.rtf"/>
     <!--+==========================+
@@ -22,7 +23,7 @@
     <!--+==========================+
         |    Package References    |
         +==========================+-->
-    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="2.1" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
+    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="2.0" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
     <!--+==========================+
         |    JavaScript Scripts    |
         +==========================+-->
@@ -47,11 +48,11 @@
 	const IC_COMPARATOR_IS_NOT_EQUAL=2;
 	const IC_COMPARATOR_IS_LESS=-1;
 
-	function IC_CheckOS(inDiskType,inMustBeInstalled,inMinimumVersion,inDistributionType)
+	function IC_CheckOS(inDiskType,inMustBeInstalled,inMinimumVersion,inMaximumVersion,inDistributionType)
 	{
 		var tOSVersion=undefined;
 		
-		/* Check Minimum Version */
+		/* Check Version Constraints */
 		
 		if (inDiskType==IC_DISK_TYPE_DESTINATION)
 		{
@@ -78,6 +79,10 @@
 		}
 		
 		if (system.compareVersions(tOSVersion,inMinimumVersion)==-1)
+			return false;
+			
+		if (inMaximumVersion!=undefined &amp;&amp;
+			system.compareVersions(tOSVersion,inMaximumVersion)==1)
 			return false;
 		
 		/* Check Distribution Type */
@@ -247,7 +252,7 @@
 	{
 		var tResult;
 
-		tResult=IC_CheckOS(IC_DISK_TYPE_STARTUP_DISK,true,'10.5',IC_OS_DISTRIBUTION_TYPE_ANY);
+		tResult=IC_CheckOS(IC_DISK_TYPE_STARTUP_DISK,true,'10.5',undefined,IC_OS_DISTRIBUTION_TYPE_ANY);
 
 		if (tResult==false)
 		{
@@ -271,13 +276,41 @@
 			{
 				var tScriptArguments2=new Array();
 
-				tResult=IC_CheckScriptReturnValue('vertifySIP.sh',tScriptArguments2,IC_COMPARATOR_IS_EQUAL,1);
+				tResult=IC_CheckScriptReturnValue('vertifySIP.sh',tScriptArguments2,IC_COMPARATOR_IS_NOT_EQUAL,0);
 
 				if (tResult==false)
 				{
 					my.result.title = system.localizedString('REQUIREMENT_FAILED_MESSAGE_INSTALLATION_CHECK_2');
 					my.result.message = system.localizedString('REQUIREMENT_FAILED_DESCRIPTION_INSTALLATION_CHECK_2');
 					my.result.type = 'Fatal';
+				}
+
+				if (tResult==true)
+				{
+					var tScriptArguments3=new Array();
+
+					tResult=IC_CheckScriptReturnValue('MacModelCheck.sh',tScriptArguments3,IC_COMPARATOR_IS_EQUAL,0);
+
+					if (tResult==false)
+					{
+						my.result.title = system.localizedString('REQUIREMENT_FAILED_MESSAGE_INSTALLATION_CHECK_4');
+						my.result.message = system.localizedString('REQUIREMENT_FAILED_DESCRIPTION_INSTALLATION_CHECK_4');
+						my.result.type = 'Fatal';
+					}
+
+					if (tResult==true)
+					{
+						var tScriptArguments4=new Array();
+
+						tResult=IC_CheckScriptReturnValue('xcode-check.sh',tScriptArguments4,IC_COMPARATOR_IS_EQUAL,0);
+
+						if (tResult==false)
+						{
+							my.result.title = system.localizedString('REQUIREMENT_FAILED_MESSAGE_INSTALLATION_CHECK_5');
+							my.result.message = system.localizedString('REQUIREMENT_FAILED_DESCRIPTION_INSTALLATION_CHECK_5');
+							my.result.type = 'Fatal';
+						}
+					}
 				}
 			}
 		}
@@ -289,7 +322,7 @@
 	{
 		var tResult;
 
-		tResult=IC_CheckOS(IC_DISK_TYPE_DESTINATION,true,'10.12.4',IC_OS_DISTRIBUTION_TYPE_ANY);
+		tResult=IC_CheckOS(IC_DISK_TYPE_DESTINATION,true,'10.12.4',undefined,IC_OS_DISTRIBUTION_TYPE_ANY);
 
 		if (tResult==false)
 		{

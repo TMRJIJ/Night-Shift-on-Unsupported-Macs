@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<installer-script authoringTool="Packages" authoringToolVersion="1.1.2" authoringToolBuild="2B104" minSpecVersion="1.0">
+    <options rootVolumeOnly="true" customize="never" allow-external-scripts="true"/>
+    <installation-check script="installation_check()"/>
+    <!--+==========================+
+        |       Presentation       |
+        +==========================+-->
+    <title>DISTRIBUTION_TITLE</title>
+    <background file="background" scaling="tofit" alignment="right"/>
+    <readme file="readme.rtfd"/>
+    <license file="license.rtf"/>
+    <!--+==========================+
+        |         Installer        |
+        +==========================+-->
+    <choices-outline>
+        <line choice="installer_choice_1"/>
+    </choices-outline>
+    <choice id="installer_choice_1" title="macOS Night Shift Enabler" description="">
+        <pkg-ref id="net.OSXHackers.pkg.NightShift"/>
+    </choice>
+    <!--+==========================+
+        |    Package References    |
+        +==========================+-->
+    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="1.4" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
+    <!--+==========================+
+        |    JavaScript Scripts    |
+        +==========================+-->
+    <script>
+
+	const __IC_FLAT_DISTRIBUTION__=false;
+	const IC_DISK_TYPE_DESTINATION=0;
+	const IC_DISK_TYPE_STARTUP_DISK=1;
+	const IC_OS_DISTRIBUTION_TYPE_ANY=0;
+	const IC_OS_DISTRIBUTION_TYPE_CLIENT=1;
+	const IC_OS_DISTRIBUTION_TYPE_SERVER=2;
+
+	const IC_CPU_ARCHITECTURE_ANY=0;
+	const IC_CPU_ARCHITECTURE_POWERPC=18;
+	const IC_CPU_ARCHITECTURE_INTEL=7;
+	const IC_CPU_ARCHITECTURE_TYPE_ANY=0;
+	const IC_CPU_ARCHITECTURE_TYPE_32=1;
+	const IC_CPU_ARCHITECTURE_TYPE_64=2;
+
+	const IC_COMPARATOR_IS_LESS=-1;
+	const IC_COMPARATOR_IS_EQUAL=0;
+	const IC_COMPARATOR_IS_GREATER=1;
+	const IC_COMPARATOR_IS_NOT_EQUAL=2;
+
+	function IC_CheckOS(inDiskType,inMustBeInstalled,inMinimumVersion,inDistributionType)
+	{
+		var tOSVersion=undefined;
+		
+		/* Check Minimum Version */
+		
+		if (inDiskType==IC_DISK_TYPE_DESTINATION)
+		{
+			if (my.target.systemVersion!=undefined)
+			{
+				tOSVersion=my.target.systemVersion.ProductVersion;
+			}
+			
+			/* Check if no OS is installed on the potential target */
+			
+			if (tOSVersion==undefined)
+			{
+				return (inMustBeInstalled==false);
+			}
+		}
+		else
+		{
+			tOSVersion=system.version.ProductVersion;
+		}
+		
+		if (system.compareVersions(tOSVersion,inMinimumVersion)==-1)
+		{
+			return false;
+		}
+		
+		/* Check Distribution Type */
+		
+		if (inDistributionType!=IC_OS_DISTRIBUTION_TYPE_ANY)
+		{
+			var tIsServer;
+			
+			if (system.compareVersions(tOSVersion,'10.8.0')==-1)
+			{
+				if (inDiskType==IC_DISK_TYPE_DESTINATION)
+				{
+					tIsServer=system.files.fileExistsAtPath(my.target.mountpoint+'/System/Library/CoreServices/ServerVersion.plist');
+				}
+				else
+				{
+					tIsServer=system.files.fileExistsAtPath('/System/Library/CoreServices/ServerVersion.plist');
+				}
+			}
+			else
+			{
+				if (inDiskType==IC_DISK_TYPE_DESTINATION)
+				{
+					tIsServer=system.files.fileExistsAtPath(my.target.mountpoint+'/Applications/Server.app');
+				}
+				else
+				{
+					tIsServer=system.files.fileExistsAtPath('/Applications/Server.app');
+				}
+			}
+			
+			if (inDistributionType==IC_OS_DISTRIBUTION_TYPE_CLIENT &amp;&amp; tIsServer==true)
+			{
+				return false;
+			}
+			
+			if (inDistributionType==IC_OS_DISTRIBUTION_TYPE_SERVER &amp;&amp; tIsServer==false)
+			{
+				return false;
+			}
+		}
+		
+		return true;
+	}
+
+	function IC_CheckCPU(inMinimumCoresCount,inSupportedArchitecture,inSupportedPowerPCArchitectureType,inSupportedIntelArchitectureType,inMinimumFrequency)
+	{
+		/* Check Minimum Core Count */
+		
+		if (system.sysctl('hw.ncpu')&gt;=inMinimumCoresCount)
+		{
+			var tArchitecture;
+			var t64BitSupport;
+			
+			tArchitecture=system.sysctl('hw.cputype');
+			
+			/* Check Architecture */
+			
+			if (inSupportedArchitecture!=IC_CPU_ARCHITECTURE_ANY)
+			{
+				if (inSupportedArchitecture!=tArchitecture)
+				{
+					return false;
+				}
+			}
+			
+			/* Check Architecture Type */
+			
+			t64BitSupport=system.sysctl('hw.cpu64bit_capable');
+			
+			if (tArchitecture==IC_CPU_ARCHITECTURE_POWERPC)
+			{
+				if ((inSupportedPowerPCArchitectureType==IC_CPU_ARCHITECTURE_TYPE_32 &amp;&amp; t64BitSupport==1) ||
+					(inSupportedPowerPCArchitectureType==IC_CPU_ARCHITECTURE_TYPE_64 &amp;&amp; t64BitSupport==0))
+				{
+					return false;
+				}
+			}
+			else if (tArchitecture==IC_CPU_ARCHITECTURE_INTEL)
+			{
+				if ((inSupportedIntelArchitectureType==IC_CPU_ARCHITECTURE_TYPE_32 &amp;&amp; t64BitSupport==1) ||
+					(inSupportedIntelArchitectureType==IC_CPU_ARCHITECTURE_TYPE_64 &amp;&amp; t64BitSupport==0))
+				{
+					return false;
+				}
+			}
+			
+			/* Check Minimum CPU Frequency */
+			
+			if (system.sysctl('hw.cpufrequency_max')&gt;=inMinimumFrequency)
+			{
+				return true;
+			}
+		}
+		
+		return false;
+	}
+
+	function IC_CheckScriptReturnValue(inScriptPath,inArguments,inComparator,inReturnValue)
+	{
+		var tReturnValue;
+	
+		if (inScriptPath.charAt(0)=='/')
+		{
+			/* Check Absolute Path Existence */
+			
+			if (system.files.fileExistsAtPath(inScriptPath)==false)
+			{
+				return false;
+			}
+		}
+		else
+		{
+			if (__IC_FLAT_DISTRIBUTION__==true &amp;&amp; system.compareVersions(system.version.ProductVersion, '10.6.0')&lt;0)
+			{
+				system.log("[WARNING] Embedded scripts are not supported in Flat distribution format on Mac OS X 10.5");
+          
+				return true;
+			}
+		}
+		
+		if (inArguments.length&gt;0)
+		{
+			var tMethodCall;
+			var tStringArguments=[];
+			
+			for(var i=0;i&lt;inArguments.length;i++)
+			{
+				tStringArguments[i]='inArguments['+i+']';
+			}
+			
+			tMethodCall='system.run(inScriptPath,'+tStringArguments.join(',')+');';
+			
+			tReturnValue=eval(tMethodCall);
+		}
+		else
+		{
+			tReturnValue=system.run(inScriptPath);
+		}
+		
+		if (tReturnValue==undefined)
+		{
+			return false;
+		}
+		
+		if (inComparator==IC_COMPARATOR_IS_EQUAL)
+		{
+			return (tReturnValue==inReturnValue);
+		}
+		else if (inComparator==IC_COMPARATOR_IS_GREATER)
+		{
+			return (tReturnValue&gt;inReturnValue);
+		}
+		else if (inComparator==IC_COMPARATOR_IS_LESS)
+		{
+			return (tReturnValue&lt;inReturnValue);
+		}
+		else if (inComparator==IC_COMPARATOR_IS_NOT_EQUAL)
+		{
+			return (tReturnValue!=inReturnValue);
+		}
+		
+		return false;
+	}
+
+	function installation_check()
+	{
+		var tResult;
+
+		tResult=IC_CheckOS(IC_DISK_TYPE_STARTUP_DISK,true,'10.5',IC_OS_DISTRIBUTION_TYPE_ANY);
+
+		if (tResult==false)
+		{
+			my.result.title = system.localizedStandardStringWithFormat('InstallationCheckError', system.localizedString('DISTRIBUTION_TITLE'));
+			my.result.message = ' ';
+			my.result.type = 'Fatal';
+		}
+
+		if (tResult==true)
+		{
+			tResult=IC_CheckCPU(2,IC_CPU_ARCHITECTURE_INTEL,IC_CPU_ARCHITECTURE_TYPE_ANY,IC_CPU_ARCHITECTURE_TYPE_64,2000000);
+
+			if (tResult==false)
+			{
+				my.result.title = system.localizedString('REQUIREMENT_FAILED_MESSAGE_INSTALLATION_CHECK_1');
+				my.result.message = system.localizedString('REQUIREMENT_FAILED_DESCRIPTION_INSTALLATION_CHECK_1');
+				my.result.type = 'Fatal';
+			}
+
+			if (tResult==true)
+			{
+				var tScriptArguments2=new Array();
+
+				tResult=IC_CheckScriptReturnValue('vertifySIP.sh',tScriptArguments2,IC_COMPARATOR_IS_EQUAL,1);
+
+				if (tResult==false)
+				{
+					my.result.title = system.localizedString('REQUIREMENT_FAILED_MESSAGE_INSTALLATION_CHECK_2');
+					my.result.message = system.localizedString('REQUIREMENT_FAILED_DESCRIPTION_INSTALLATION_CHECK_2');
+					my.result.type = 'Fatal';
+				}
+
+				if (tResult==true)
+				{
+					var tScriptArguments3=new Array();
+
+					tResult=IC_CheckScriptReturnValue('vertifyOS.sh',tScriptArguments3,IC_COMPARATOR_IS_EQUAL,0);
+
+					if (tResult==false)
+					{
+						my.result.title = system.localizedString('REQUIREMENT_FAILED_MESSAGE_INSTALLATION_CHECK_3');
+						my.result.message = system.localizedString('REQUIREMENT_FAILED_DESCRIPTION_INSTALLATION_CHECK_3');
+						my.result.type = 'Fatal';
+					}
+				}
+			}
+		}
+
+		return tResult;
+	}
+
+    </script>
+</installer-script>

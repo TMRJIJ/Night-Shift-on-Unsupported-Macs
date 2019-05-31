@@ -1,12 +1,15 @@
-{\rtf1\ansi\ansicpg1252\cocoartf1504\cocoasubrtf830
-{\fonttbl\f0\fswiss\fcharset0 Helvetica;}
+{\rtf1\ansi\ansicpg1252\cocoartf1671\cocoasubrtf600
+{\fonttbl\f0\fswiss\fcharset0 Helvetica-Bold;\f1\fswiss\fcharset0 Helvetica;}
 {\colortbl;\red255\green255\blue255;}
 {\*\expandedcolortbl;;}
+{\*\listtable{\list\listtemplateid1\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid1\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid1}
+{\list\listtemplateid2\listhybrid{\listlevel\levelnfc23\levelnfcn23\leveljc0\leveljcn0\levelfollow0\levelstartat1\levelspace360\levelindent0{\*\levelmarker \{hyphen\}}{\leveltext\leveltemplateid101\'01\uc0\u8259 ;}{\levelnumbers;}\fi-360\li720\lin720 }{\listname ;}\listid2}}
+{\*\listoverridetable{\listoverride\listid1\listoverridecount0\ls1}{\listoverride\listid2\listoverridecount0\ls2}}
 \margl1440\margr1440\vieww10800\viewh8400\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
 \f0\b\fs36 \cf0 Sc\'e9nario d'activation de nuit pour Macs non pris en charge
-\b0\fs24 \
+\f1\b0\fs24 \
 \
 Script r\'e9alis\'e9 par Isiah Johnson (TMRJIJ) / {\field{\*\fldinst{HYPERLINK "http://osxhackers.net"}}{\fldrslt OS X Hackers}} & Dosdude1\
 \
@@ -17,8 +20,8 @@ Comme demand\'e9, ce script est con\'e7u comme non commercial, sans demande de d
 URL du blog: {\field{\*\fldinst{HYPERLINK "https://pikeralpha.wordpress.com/2017/01/30/4398/"}}{\fldrslt https://pikeralpha.wordpress.com/2017/01/30/4398/}}\
 \
 
-\b Histoire
-\b0 \
+\f0\b Histoire
+\f1\b0 \
 \
 MacOS Sierra 10.12.4 apporte le mode Nuit nocturne iOS au Mac pour la premi\'e8re fois. Night Shift, introduit pour la premi\'e8re fois sur les appareils iOS dans iOS 9.3, est con\'e7u pour d\'e9placer progressivement l'affichage d'un p\'e9riph\'e9rique du bleu vers un jaune subtil, en r\'e9duisant l'exposition \'e0 la lumi\'e8re bleue. La lumi\'e8re bleue est cens\'e9e interrompre le rythme circadien, perturbant les habitudes de sommeil.\
 \
@@ -26,34 +29,42 @@ Night Shift est activ\'e9 dans la section Pr\'e9sentations des Pr\'e9f\'e9rences
 \
 Night Shift a \'e9t\'e9 introduit dans MacOS Sierra 10.12.4 (Build 16E144f et Public Beta 1) et est contr\'f4l\'e9 par CoreBrightness.framework. Les exigences minimales officielles pour cette fonctionnalit\'e9 sont les suivantes:\
 \
-- MacBookPro9, x\
-- iMac13, x\
-- Macmini6, x\
-- MacBookAir5, x\
-- MacPro6, x\
-- MacBook8, x\
-\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural\partightenfactor0
+\ls1\ilvl0\cf0 {\listtext	\uc0\u8259 	}MacBookPro9,x\
+{\listtext	\uc0\u8259 	}iMacPro1,x\
+{\listtext	\uc0\u8259 	}iMac13,x\
+{\listtext	\uc0\u8259 	}Macmini6,x\
+{\listtext	\uc0\u8259 	}MacBookAir5,x\
+{\listtext	\uc0\u8259 	}MacPro6,x\
+{\listtext	\uc0\u8259 	}MacBook8,x\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
 Bien s\'fbr, ce patch est destin\'e9 \'e0 contourner compl\'e8tement cette v\'e9rification.\
 \
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\b Exigences de la version du syst\'e8me d'exploitation
-\b0 \
+\f0\b \cf0 Exigences de la version du syst\'e8me d'exploitation
+\f1\b0 \
 \
-- MacOS 10.12.4 (16E195) pris en charge\
-- MacOS 10.12.5 (16F73) pris en charge\
+\pard\tx220\tx720\tx1120\tx1680\tx2240\tx2800\tx3360\tx3920\tx4480\tx5040\tx5600\tx6160\tx6720\li720\fi-720\pardirnatural\partightenfactor0
+\ls2\ilvl0\cf0 {\listtext	\uc0\u8259 	}macOS 10.12.4 Sierra\
+{\listtext	\uc0\u8259 	}macOS 10.13 High Sierra\
+{\listtext	\uc0\u8259 	}macOS 10.14 Mojave\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
+\cf0 \
 \
 \
-\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardirnatural\partightenfactor0
 
-\b Bugs connus
-\b0 \
+\f0\b \cf0 Bugs connus
+\f1\b0 \
 \
 - Certains moniteurs tiers ne sont PAS compatibles avec ce Patch.\
 \
 \
 
-\b Soutien
-\b0 \
+\f0\b Soutien
+\f1\b0 \
 \
 En tant que tel, si quelque chose ne va pas (comme l'onglet Affichage dans Pr\'e9vention du syst\'e8me s'\'e9crasant) ou si cette copie de cadre ne fonctionne pas. N'h\'e9sitez pas \'e0 m'envoyer un courriel \'e0 support@osxhackers.net, faites-le moi savoir dans l'onglet Questions ou essayez-le manuellement via la publication de {\field{\*\fldinst{HYPERLINK "https://pikeralpha.wordpress.com/2017/01/30/4398/"}}{\fldrslt blog originale de Pike}}.\
 \

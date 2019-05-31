@@ -1,0 +1,18 @@
+BuildVersions Text
+
+
+Do NOT remove Build Version. Doing so might prevent the Framework Patch Check from functioning correctly.
+
+Note from Developer: “Wait what are you doing here, buddy? :P”
+
+
+Board ID:
+16E195
+16F73
+16F43c
+16F54b
+16F60a
+16F67a
+16F71b
+16G8c
+

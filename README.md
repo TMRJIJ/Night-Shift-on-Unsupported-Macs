@@ -1,9 +1,7 @@
 # Night Shift on Unsupported Macs
 
 
-Updated January 15, 2018 
-Note: I am aware of the issue in High Sierra and will fix it accordingly in the next update.
-
+Updated May 30, 2019 
 
 Night Shift Enable Script for Unsupported Macs
 Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
@@ -20,8 +18,8 @@ Blog URL: [Click Here](https://pikeralpha.wordpress.com/2017/01/30/4398/)
 
 # Announcements
 
-- I am currently testing macOS High Sierra. Now allowing Feature Requests via Email or Pull Requesting.
-- Thinking into solutions that keep the framework patched throughout updates. Open to suggestions.
+- I deeply apologize for the lack of updates. College life was pretty busy. 
+- I will work in the Backup and Uninstaller Issues facing the v2.0 patch.
 
 ![alt tag](http://dl.osxhackers.net/.images/NightShift.png)
 
@@ -34,6 +32,7 @@ Night Shift is activated through the Displays section of System Preferences, whe
 Night Shift was introduced in macOS Sierra 10.12.4 (16E144f) and is controlled by the CoreBrightness.framework. The official minimum requirements for this feature are: 
 
 - MacBookPro9,x
+- iMacPro1,x
 - iMac13,x
 - Macmini6,x
 - MacBookAir5,x
@@ -45,11 +44,8 @@ Of course, this patch is intended to bypass this check completely.
 # OS Version Requirements
 
 - macOS 10.12 Sierra Supported
-
-Currently Testing 
-
-- macOS 10.13.2 
-
+- macOS 10.13 High Sierra Supported
+- macOS 10.14 Mojave Supported
 
 
 # Patching Instructions
@@ -86,11 +82,12 @@ Script Patching:
 4. After Reverting. Restart your Mac.
 5. You will see that the Night Shift tab is no longer available.
     
+Note: v2.0 is also compatible with the other scripts for repatching and uninstallation.
 
 # Known Bugs
 
 - Certain Third-party monitors are NOT Compatible with this Patch.
-- macOS 10.13  has alterations in the Framework that will result in the Display Preference in System Preferences to not work, however the Night Shift toggle via Notification Center does seem to work. I will address this issue in the next update.
+- Certain Models and configurations can be left with a Disabled Notification Center and the inability to open the DIsplay and/or Energy Saver Preferences Pane in System Preferences.
 
 
 
