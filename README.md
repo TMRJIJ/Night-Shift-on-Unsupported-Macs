@@ -20,6 +20,7 @@ Blog URL: [Click Here](https://pikeralpha.wordpress.com/2017/01/30/4398/)
 
 - I deeply apologize for the lack of updates. College life was pretty busy. 
 - I will work in the Backup and Uninstaller Issues facing the v2.0 patch.
+- It looks like I may need to make a script for re-patching as well.
 
 ![alt tag](http://dl.osxhackers.net/.images/NightShift.png)
 
@@ -94,6 +95,8 @@ Note: v2.0 is also compatible with the other scripts for repatching and uninstal
 # Support
 
 As such, if something goes wrong (like the Display tab in System Preference crashing) or if this framework copy doesn't work. Please feel free to email me at support@osxhackers.net, let me know in the Issues Tab, or attempt it manually via [Pike's original blog post.](https://pikeralpha.wordpress.com/2017/01/30/4398/)
+
+Also join the rest of the Unsupported Mac Community on [our Discord Server](https://discord.gg/XbbWAsE)
 
 Have Fun!
 
