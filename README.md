@@ -4,7 +4,7 @@
 Updated May 30, 2019 
 
 Night Shift Enable Script for Unsupported Macs
-Script made by Isiah Johnson (TMRJIJ) / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & Dosdude1
+Script made by [Isiah Johnson (TMRJIJ)](https://IsiahJohnson.com "Isiah Johnson") / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & [Dosdude1](http://dosdude1.com "Dosdude1")
 
 ![alt tag](http://osxhackers.net/img/sunsetLogo.jpg)
 
