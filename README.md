@@ -1,7 +1,10 @@
 # Night Shift on Unsupported Macs
 
 
-Updated May 30, 2019 
+Version 2.0.1 - GUI Installer
+Version 2.0 - Bash Script
+
+Updated July 31, 2019 
 
 Night Shift Enable Script for Unsupported Macs
 Script made by [Isiah Johnson (TMRJIJ)](https://IsiahJohnson.com "Isiah Johnson") / [OS X Hackers](http://osxhackers.net/NightShift "OS X Hackers") & [Dosdude1](http://dosdude1.com "Dosdude1")
@@ -47,6 +50,8 @@ Of course, this patch is intended to bypass this check completely.
 - macOS 10.12 Sierra Supported
 - macOS 10.13 High Sierra Supported
 - macOS 10.14 Mojave Supported
+
+-macOS 10.15 Catalina has not been Tested yet. Stay Tuned for updates.
 
 
 # Patching Instructions
