@@ -7,8 +7,8 @@
         |       Presentation       |
         +==========================+-->
     <title>DISTRIBUTION_TITLE</title>
-    <background file="background" scaling="tofit" alignment="right"/>
-    <background-darkAqua file="background" scaling="tofit" alignment="right"/>
+    <background file="background" scaling="tofit" alignment="center" layout-direction="natural"/>
+    <background-darkAqua file="background" scaling="tofit" alignment="center" layout-direction="natural"/>
     <readme file="readme.rtfd"/>
     <license file="license.rtf"/>
     <!--+==========================+
@@ -23,7 +23,7 @@
     <!--+==========================+
         |    Package References    |
         +==========================+-->
-    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="2.0" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
+    <pkg-ref id="net.OSXHackers.pkg.NightShift" version="2.0.1" auth="Root" installKBytes="0" onConclusion="RequireRestart">file:./Contents/Packages/macOS%20Night%20Shift%20Enabler.pkg</pkg-ref>
     <!--+==========================+
         |    JavaScript Scripts    |
         +==========================+-->
@@ -276,7 +276,7 @@
 			{
 				var tScriptArguments2=new Array();
 
-				tResult=IC_CheckScriptReturnValue('vertifySIP.sh',tScriptArguments2,IC_COMPARATOR_IS_NOT_EQUAL,0);
+				tResult=IC_CheckScriptReturnValue('vertifySIP.sh',tScriptArguments2,IC_COMPARATOR_IS_NOT_EQUAL,1);
 
 				if (tResult==false)
 				{
